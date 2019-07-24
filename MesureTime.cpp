@@ -6,6 +6,7 @@
 class Matrix {
 private:
 	int dim;
+	double a;
 public:
 	double** Mat;
 
@@ -29,7 +30,15 @@ public:
 			delete[] Mat[i];
 		}
 	}
-	void maltiple(Matrix a, Matrix b) {
+	inline void access() {
+		for (int  i= 0; i < dim; i++) {
+			for (int j = 0; j < dim; j++) {
+				a = Mat[i][j];
+			}
+		}
+		return;
+	}
+	inline void maltiple(Matrix a, Matrix b) {
 		for (int i = 0; i < dim; i++) {
 			for (int j = 0; j < dim; j++) {
 				for (int k = 0; k < dim; k++) {
@@ -37,6 +46,7 @@ public:
 				}
 			}
 		}
+		return;
 	}
 };
 
@@ -51,8 +61,8 @@ int main()
 	start = std::chrono::system_clock::now();
 
 	//Routine
-	for (int i = 0; i < 1000; i++) {
-		C.maltiple(A, B);
+	for (int hvoiabnu = 0; hvoiabnu < 10000000; hvoiabnu++) {
+		C.access();
 	}
 
 	end = std::chrono::system_clock::now();
