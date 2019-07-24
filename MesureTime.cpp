@@ -14,9 +14,10 @@ public:
 		dim = n;
 
 		Mat = new double*[dim];
+		Mat[0] = new double[dim*dim];
 
 		for (int i = 0; i < dim; i++) {
-			Mat[i] = new double[dim];
+			Mat[i] = Mat[0] + i * dim;
 		}
 		for (int i = 0; i < dim; i++){
 			for (int j = 0; j < dim; j++) {
