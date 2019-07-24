@@ -1,0 +1,10 @@
+#file
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+
+#directory
+/x64
+
+#wildcard
+*.log
